@@ -1,8 +1,8 @@
 'use strict';
 /*
-Game.registerMod("Balanced Autoclicker", {
+Game.registerMod("cookie-autoclicker", {
     init: function() {
-            Game.mods["Balanced Autoclicker"].sprintReady = true;
+            Game.mods["cookie-autoclicker"].sprintReady = true;
 
             document.addEventListener("keydown", function(event) {
             let key = event.keyCode;
@@ -12,7 +12,7 @@ Game.registerMod("Balanced Autoclicker", {
 
             if (key == 191) { // if "/" pressed
                 console.log("disabled autoclicker");
-                Game.mods["Balanced Autoclicker"].disable();
+                Game.mods["cookie-autoclicker"].disable();
                 return
             };
 
@@ -20,34 +20,34 @@ Game.registerMod("Balanced Autoclicker", {
                 return;
             };
 
-            if (Game.mods["Balanced Autoclicker"].active) {
+            if (Game.mods["cookie-autoclicker"].active) {
                 return
             }
 
             if (key == 188) { // if "," pressed
                 console.log("sprint started");
-                Game.mods["Balanced Autoclicker"].active = true;
-                Game.mods["Balanced Autoclicker"].sprintReady = false;
-                Game.mods["Balanced Autoclicker"].sprintTimer = setTimeout(Game.mods["Balanced Autoclicker"].sprintReady = true, 120000)
-                Game.mods["Balanced Autoclicker"].fifteenCpsInterval = setInterval(Game.ClickCookie, 67);
-                Game.mods["Balanced Autoclicker"].tenSecondTimer = setTimeout(function() {clearInterval(Game.mods["Balanced Autoclicker"].fifteenCpsInterval);Game.mods["Balanced Autoclicker"].thirteenCpsInterval = setInterval(Game.ClickCookie, 77)}, 10000);
-                Game.mods["Balanced Autoclicker"].twentySecondTimer = setTimeout(function() {clearInterval(Game.mods["Balanced Autoclicker"].thirteenCpsInterval);Game.mods["Balanced Autoclicker"].tenCpsInterval = setInterval(Game.ClickCookie, 100)}, 20000);
+                Game.mods["cookie-autoclicker"].active = true;
+                Game.mods["cookie-autoclicker"].sprintReady = false;
+                Game.mods["cookie-autoclicker"].sprintTimer = setTimeout(Game.mods["cookie-autoclicker"].sprintReady = true, 120000)
+                Game.mods["cookie-autoclicker"].fifteenCpsInterval = setInterval(Game.ClickCookie, 67);
+                Game.mods["cookie-autoclicker"].tenSecondTimer = setTimeout(function() {clearInterval(Game.mods["cookie-autoclicker"].fifteenCpsInterval);Game.mods["cookie-autoclicker"].thirteenCpsInterval = setInterval(Game.ClickCookie, 77)}, 10000);
+                Game.mods["cookie-autoclicker"].twentySecondTimer = setTimeout(function() {clearInterval(Game.mods["cookie-autoclicker"].thirteenCpsInterval);Game.mods["cookie-autoclicker"].tenCpsInterval = setInterval(Game.ClickCookie, 100)}, 20000);
             };
 
             if (key == 190) { // if "." pressed
                 console.log("regular autoclicker started");
-                Game.mods["Balanced Autoclicker"].active = true;
-                Game.mods["Balanced Autoclicker"].tenCpsInterval = setInterval(Game.ClickCookie, 100);
+                Game.mods["cookie-autoclicker"].active = true;
+                Game.mods["cookie-autoclicker"].tenCpsInterval = setInterval(Game.ClickCookie, 100);
             };
         });
     },
     disable: function() {
-        clearInterval(Game.mods["Balanced Autoclicker"].fifteenCpsInterval);
-        clearInterval(Game.mods["Balanced Autoclicker"].thirteenCpsInterval);
-        clearInterval(Game.mods["Balanced Autoclicker"].tenCpsInterval);
-        clearTimeout(Game.mods["Balanced Autoclicker"].tenSecondTimer);
-        clearTimeout(Game.mods["Balanced Autoclicker"].twentySecondTimer);
-        Game.mods["Balanced Autoclicker"].active = false
+        clearInterval(Game.mods["cookie-autoclicker"].fifteenCpsInterval);
+        clearInterval(Game.mods["cookie-autoclicker"].thirteenCpsInterval);
+        clearInterval(Game.mods["cookie-autoclicker"].tenCpsInterval);
+        clearTimeout(Game.mods["cookie-autoclicker"].tenSecondTimer);
+        clearTimeout(Game.mods["cookie-autoclicker"].twentySecondTimer);
+        Game.mods["cookie-autoclicker"].active = false
     }
 });
 */
