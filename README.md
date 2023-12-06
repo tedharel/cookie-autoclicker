@@ -8,12 +8,12 @@ This autoclicker is made to replace manual clicking with realistic autoclicking.
 Create a bookmark and copy the code below into the URL section. To load the addon simply click the bookmark.
 
 ```
-I'm still working on this, my apologies
+javascript:const autoclickerScript = document.createElement("script");autoclickerScript.type = "text/javascript";autoclickerScript.src = "https://raw.githubusercontent.com/tedharel/cookie-autoclicker/main/cookie-autoclicker.js";document.head.appendChild(autoclickerScript);
 ```
 
 ## Cookie Clicker Mod Manager
 If you have the [Cookie Clicker Mod Manager](https://github.com/klattmose/CookieClickerModManager) installed, you can install the addon simply by adding the URL below as a new mod.
 
 ```
-Same for this one
+https://raw.githubusercontent.com/tedharel/cookie-autoclicker/main/cookie-autoclicker.js
 ```
