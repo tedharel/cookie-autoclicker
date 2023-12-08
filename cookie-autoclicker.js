@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 Game.registerMod("cookie-autoclicker", {
     init: function() {
             Game.mods["cookie-autoclicker"].sprintReady = true;
@@ -50,10 +50,11 @@ Game.registerMod("cookie-autoclicker", {
         Game.mods["cookie-autoclicker"].active = false
     }
 });
+*/
 
 
-/*
 let autoclicker = window.autoclicker = {};
+autoclicker.sprintReady = true
 
 autoclicker.disable = function() {
     clearInterval(autoclicker.fifteenCpsInterval);
@@ -64,26 +65,41 @@ autoclicker.disable = function() {
     autoclicker.active = false
 };
 
-document.addEventListener("wheel", event => {
-    const delta = Math.sign(event.deltaY);
-    if (delta == 1) {
-        console.log("disabled autoclicker");
+document.addEventListener("keydown", function(event) {
+    let key = event.keyCode;
+
+    if (key == 191 || autoclicker.active && (key == 188 || 190)) { // if "/" pressed, or either "," or "." while active 
         autoclicker.disable();
+        return
     };
 
     if (document.querySelectorAll(':hover')[document.querySelectorAll(':hover').length-1] != document.getElementById("bigCookie")) {
         return;
     };
+	
+    if (autoclicker.active) {
+        return;
+    };
 
-    if (delta == -1) {
-        console.log("hurrah ig");
-        if (autoclicker.active) {
-            return;
-        };
+	if (key == 190) { // if "." pressed
         autoclicker.active = true;
+        autoclicker.tenCpsInterval = setInterval(Game.ClickCookie, 100);
+        return
+	};
+
+	if (!autoclicker.sprintReady) {
+		Game.Popup("Sprint is not ready yet", Game.mouseX, Game.mouseY);
+        autoclicker.active = true;
+        autoclicker.tenCpsInterval = setInterval(Game.ClickCookie, 100);
+		return
+	}
+
+    if (key == 188) { // if "," pressed
+        autoclicker.active = true;
+		autoclicker.sprintReady = false;
+        autoclicker.sprintTimer = setTimeout(function() {autoclicker.sprintReady= true;Game.Notify("Sprint is ready!", 'Press "," to activate', ["12", "0"], 3, true)}, 120000)
         autoclicker.fifteenCpsInterval = setInterval(Game.ClickCookie, 67);
         autoclicker.tenSecondTimer = setTimeout(function() {clearInterval(autoclicker.fifteenCpsInterval);autoclicker.thirteenCpsInterval = setInterval(Game.ClickCookie, 77)}, 10000);
         autoclicker.twentySecondTimer = setTimeout(function() {clearInterval(autoclicker.thirteenCpsInterval);autoclicker.tenCpsInterval = setInterval(Game.ClickCookie, 100)}, 20000);
     };
 });
-*/
